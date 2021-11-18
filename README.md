@@ -221,10 +221,14 @@ After calculating the daily entries/exits `df_mta['Daily Entries'] = df_mta[['En
 ## 4. PREPERATION
 
 
-## 5. VISUALIZATION
+## 5. VISUALIZATION / RESULTS
 
 
 ## 6. CONCLUSION
+- MTA and STATIONS datasets joined to get stations locations.
+- SATAIONS dataset didn’t require any cleaning.
+- Plotting entries/exits shows that Manhattan is the busiest area.
+- Plotting entries/exits vs drop-off/pickups show possible spots that have crowded by poeple coming from subway but uncovered by taxi.
 
 
 
