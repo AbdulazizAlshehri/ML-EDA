@@ -212,7 +212,10 @@ Three datasets were used in this analysis, as follows:
 
 ## 3. CLEANING
 **MTA Dataset: MTA Wrong Data**
-After calculating the daily entries/exits `df_mta['Daily Entries'] = df_mta[['Entries']].diff()`
+Scince the provided data about entries and exits are comulative values (i.e. each observation represent the total number of entries/exits until observation time) we need to calculate daily entries/exits, we did that by using the following code snippet `df_mta['Daily Entries'] = df_mta[['Entries']].diff()`. After calculating the daily entries and daily exits by subtracting we found that some wrong values appeared in columns *daily_entries* and *daily_exits* science some rows are subtracted from the previouse rows (that don't belong to the same turnstyle or/and same day)
+
+TABLE
+
 **MTA Dataset: Off-Duty Turnstyles**
 **MTA Dataset: Outliers**
 **Taxi Dataset: Zeros & Duplicates**
