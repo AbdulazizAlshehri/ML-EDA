@@ -1,17 +1,17 @@
 
 # Exploratory Data Analysis (EDA) Project
 
-This project seeks to answer the analysis questions by Discovering, Cleaning, Preparing, Visualizing the data from three datasets MTA, Taxi, Stations datasets discussed in more details below. The project explaind in six main sections as following:
+This project seeks to answer the analysis questions by Discovering, Cleaning, Preparing, nad Visualizing the data from the three datasets MTA, Taxi, and Stations datasets discussed in details below. The project explaind in six main sections as following:
 
 ## 1. ANALYSIS QUESTIONS
-1. What patterns people follows in the NYC subway?
-2. Relationship between the NYC subway and taxies?
+- What patterns people follows in the NYC subway?
+- Relationship between the NYC subway and taxies?
 
 ## 2. DATA
-Three datasets were used in this analysis, as follows:
+Three datasets were used in this analysis, for each dataset we selected only columns we are interested in, as following:
 
-1. MTA Dataset:
-  provides the basic data about NYC subway turnstyles, e.g. number of entries, number of exits, dataset can be found [here](http://web.mta.info/developers/turnstile.html)
+**1. MTA Dataset** [source](http://web.mta.info/developers/turnstile.html): <br />
+provides the basic data about NYC subway turnstyles, e.g. number of entries (cumulative), number of exits (cumulative)
   
   <table border="1" class="dataframe">
   <thead>
@@ -87,9 +87,9 @@ Three datasets were used in this analysis, as follows:
 </table>
 </div>
 
-<!-- ![Alt text](/extra/MTA%20Original.png?raw=true "MTA Dataset") -->
-  
-2. NYC Yellow Taxi dataset: which provide the info about each taxi trip in NYC e.g. pickup location, dropoff location, pickup datetime, datetime dropoff, dataset can be found [here](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+
+2. NYC Yellow Taxi dataset [source](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page): <br />
+which provide the info about each taxi trip in NYC e.g. pickup location, dropoff location, pickup datetime, datetime dropoff, dataset can be found 
   
 
 <table border="1" class="dataframe">
@@ -160,9 +160,8 @@ Three datasets were used in this analysis, as follows:
 </table>
 </div>
 
-<!-- ![Alt text](/extra/TAXI%20Original.png?raw=true "Taxi Dataset") -->
-
-3. Stations dataset: which provide stations names and locations, we need this dataset inorder to know the location for each turnstyle, dataset can be found [here](https://qri.cloud/nyc-transit-data/turnstiles_station_list)
+3. Stations dataset [source](https://qri.cloud/nyc-transit-data/turnstiles_station_list): <br />
+which provide stations' names and locations, we need this dataset inorder to know the location for each turnstyle, dataset preview:
 
 <table border="1" class="dataframe">
   <thead>
@@ -208,23 +207,30 @@ Three datasets were used in this analysis, as follows:
 </table>
 </div>
 
-<!-- ![Alt text](/extra/STATIONS%20Original.png?raw=true "Stations Dataset") -->
-
 ## 3. CLEANING
 **MTA Dataset: MTA Wrong Data**
+
 Scince the provided data about entries and exits are comulative values (i.e. each observation represent the total number of entries/exits until observation time) we need to calculate daily entries/exits, we did that by using the following code snippet `df_mta['Daily Entries'] = df_mta[['Entries']].diff()`. After calculating the daily entries and daily exits by subtracting we found that some wrong values appeared in columns *daily_entries* and *daily_exits* science some rows are subtracted from the previouse rows (that don't belong to the same turnstyle or/and same day)
 
 TABLE
 
 **MTA Dataset: Off-Duty Turnstyles**
+
+
 **MTA Dataset: Outliers**
+
+
 **Taxi Dataset: Zeros & Duplicates**
+
+
 **Taxi Dataset: LOcations outside NYC**
+
+
 
 ## 4. PREPERATION
 
 
-## 5. VISUALIZATION / RESULTS
+## 5. VISUALIZATION (RESULTS)
 
 
 ## 6. CONCLUSION
