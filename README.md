@@ -1,7 +1,7 @@
 
 # Exploratory Data Analysis (EDA) Project
 
-This project seeks to answer the analysis questions by Discovering, Cleaning, Preparing, nad Visualizing the data from the three datasets MTA, Taxi, and Stations datasets discussed in details below. The project explaind in six main sections as following:
+This project seeks to answer the analysis questions by Discovering, Cleaning, Preparing, nad Visualizing the data from the three datasets MTA, Taxi, and Stations datasets discussed in details below. The project explaind in five main sections as following:
 
 ## 1. ANALYSIS QUESTIONS
 - What patterns people follows in the NYC subway?
@@ -10,7 +10,7 @@ This project seeks to answer the analysis questions by Discovering, Cleaning, Pr
 ## 2. DATA
 Three datasets were used in this analysis, for each dataset we selected only columns we are interested in, as following:
 
-**1. MTA Dataset** [source](http://web.mta.info/developers/turnstile.html): <br />
+### 1. MTA Dataset [source](http://web.mta.info/developers/turnstile.html): 
 provides the basic data about NYC subway turnstyles, e.g. number of entries (cumulative), number of exits (cumulative)
   
   <table border="1" class="dataframe">
@@ -88,7 +88,7 @@ provides the basic data about NYC subway turnstyles, e.g. number of entries (cum
 </div>
 
 
-2. NYC Yellow Taxi dataset [source](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page): <br />
+### 2. NYC Yellow Taxi dataset [source](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page): 
 which provide the info about each taxi trip in NYC e.g. pickup location, dropoff location, pickup datetime, datetime dropoff, dataset can be found 
   
 
@@ -160,7 +160,7 @@ which provide the info about each taxi trip in NYC e.g. pickup location, dropoff
 </table>
 </div>
 
-3. Stations dataset [source](https://qri.cloud/nyc-transit-data/turnstiles_station_list): <br />
+### 3. Stations dataset [source](https://qri.cloud/nyc-transit-data/turnstiles_station_list):
 which provide stations' names and locations, we need this dataset inorder to know the location for each turnstyle, dataset preview:
 
 <table border="1" class="dataframe">
@@ -208,7 +208,7 @@ which provide stations' names and locations, we need this dataset inorder to kno
 </div>
 
 ## 3. CLEANING
-**3.1. MTA Dataset (Wrong Data):**
+### MTA Dataset (Wrong Data):
 
 Scince the provided entries/exits data are comulative values (i.e. each observation represent the total number of entries/exits until observation time) we need to calculate daily entries/exits, for that we ordered the observations by datetime so that we can calculate the daily entries/exits by subtracting each observation with the previouse one, see the following code snippet `df_mta['Daily Entries'] = df_mta[['Entries']].diff()`. After calculating the daily entries and daily exits by subtracting, wrong values appeared in columns *daily_entries* and *daily_exits* science some rows are subtracted from the previouse rows that don't belong to the same turnstyle or/and same day as the first row, these rows with the wrong data were removed, see row with index 252 in the following table:
 
@@ -253,7 +253,7 @@ Scince the provided entries/exits data are comulative values (i.e. each observat
 </table>
 
 
-**MTA Dataset: Off-Duty Turnstyles** </br>
+### MTA Dataset (Off-Duty Turnstyles):
 157229 rows founded with no change in entries and exits, see the following table:
 
 <table border="1" class="dataframe">
@@ -329,7 +329,7 @@ Scince the provided entries/exits data are comulative values (i.e. each observat
   </tbody>
 </table>
 
-**MTA Dataset (Outliers):** 
+### MTA Dataset (Outliers): 
 </br>
 outliers 
 </br>
@@ -340,7 +340,7 @@ outliers removed
 ![alt text](/extra/MTA%20Outliers%20after.png "Outliers Removed")
 </br>
 
-**Taxi Dataset (Missing values & Duplicates):** </br>
+### Taxi Dataset (Missing values & Duplicates):
 Moving to **Taxi dataset** some observations have missing  pickup and/or drop-off coordinates equal to zeros (missing), see the following table: </br>
 
 <table border="1" class="dataframe">
@@ -411,24 +411,67 @@ Moving to **Taxi dataset** some observations have missing  pickup and/or drop-of
 </table>
  </br>
  
- and found some duplicated rows, see the following table example:
+ and found some duplicated rows, see the following table example: </br>
+ <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pickup Datetime</th>
+      <th>Dropoff Datetime</th>
+      <th>Passenger Count</th>
+      <th>Pickup Longitude</th>
+      <th>Pickup Latitude</th>
+      <th>Dropoff Longitude</th>
+      <th>Dropoff Latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1773</th>
+      <td>2016-01-02 00:50:32</td>
+      <td>2016-01-02 00:51:16</td>
+      <td>1</td>
+      <td>-73.825645</td>
+      <td>40.712231</td>
+      <td>-73.83033</td>
+      <td>40.714161</td>
+    </tr>
+    <tr>
+      <th>1774</th>
+      <td>2016-01-02 00:50:32</td>
+      <td>2016-01-02 00:51:16</td>
+      <td>1</td>
+      <td>-73.825645</td>
+      <td>40.712231</td>
+      <td>-73.83033</td>
+      <td>40.714161</td>
+    </tr>
+  </tbody>
+</table>
  
  
-
-**Taxi Dataset (Locations outside NYC)**
+### Taxi Dataset (Locations outside NYC):
+</br>
+According to [source](https://data.cityofnewyork.us/Transportation/NYC-Taxi-Zones/d3c5-ddgc) NYC is located between (40.496115395170364, -74.25559136315209) and (40.91553277700258, -73.7000090639354), so we removed all observations that have pickup or drop-off coordinates located outside these boundaries.
 </br> 
-According [source](https://data.cityofnewyork.us/Transportation/NYC-Taxi-Zones/d3c5-ddgc) NYC is located between (40.496115395170364, -74.25559136315209) and (40.91553277700258, -73.7000090639354)
-</br> 
-![alt text](/extra/TAXI%20Wrong%20coord.png "Outliers")
+observations with pickup or dropoff coordinates located outside NYC boundaries
+</br>
+![alt text](/extra/TAXI%20Wrong%20coord.png "Wrong coordinates")
 
 
-## 4. PREPERATION
+## 4. VISUALIZATION (RESULTS)
+By plotting MTA subway entries `plotly.express.scatter(df_mta_with_locations_uni, x="Longitude", y="Latitude", size="DailyEntries")` we can see the most crowded stations since each circle represent a subway station and size of the circle represent the total number of entries/exits in that stations, see the following graph: </br>
+
+![alt text](/Output%20Screenshots/SUBWAY%20Entries%20with%20locations.png "Subway Stations")
+
+</br>
+
+Comparing daily subway exits with taxi pickups we can see the areas where there is a lot of poeple exiting subwway while there is much lesser or non taxi pickups, which indicate that either these poeple exiting to thier homes directly or there is a chance these areas need to be considered by taxies to cover, see the following gragh:
+
+![alt text](/extra/Subway%20Exits%20vs%20Taxi%20Pickups.png "Subway Stations")
 
 
-## 5. VISUALIZATION (RESULTS)
-
-
-## 6. CONCLUSION
+## 5. CONCLUSION
 - MTA and STATIONS datasets joined to get stations locations.
 - SATAIONS dataset didn’t require any cleaning.
 - Plotting entries/exits shows that Manhattan is the busiest area.
