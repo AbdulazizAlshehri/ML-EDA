@@ -476,5 +476,6 @@ Comparing daily subway exits with taxi pickups we can see the areas where there 
 
 
 
-This project devoloped to fullfill SDAIA T5 bootcamp requirements. It includes exploring, cleaning, and visualizing data, and making sure its outliers free. This project has a large space of creativity and brining any data set that can be used along with MTA dataset.
+This project (EDA Project) was done to fullfill SDAIA T5 bootcamp requirements.
+by [Abdulaziz](https://github.com/AbdulazizAlshehri)
 
