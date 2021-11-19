@@ -329,15 +329,97 @@ Scince the provided entries/exits data are comulative values (i.e. each observat
   </tbody>
 </table>
 
-**MTA Dataset: Outliers** </br>
+**MTA Dataset (Outliers):** 
+</br>
+outliers 
+</br>
+![alt text](/extra/MTA%20Outliers%20before.png "Outliers")
+</br>
+outliers removed
+</br>
+![alt text](/extra/MTA%20Outliers%20after.png "Outliers Removed")
+</br>
 
+**Taxi Dataset (Missing values & Duplicates):** </br>
+Moving to **Taxi dataset** some observations have missing  pickup and/or drop-off coordinates equal to zeros (missing), see the following table: </br>
 
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pickup Datetime</th>
+      <th>Dropoff Datetime</th>
+      <th>Passenger Count</th>
+      <th>Pickup Longitude</th>
+      <th>Pickup Latitude</th>
+      <th>Dropoff Longitude</th>
+      <th>Dropoff Latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>38</th>
+      <td>2016-01-01 00:00:19</td>
+      <td>2016-01-01 00:19:33</td>
+      <td>1</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>2016-01-01 00:00:41</td>
+      <td>2016-01-01 00:00:46</td>
+      <td>5</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>2016-01-01 00:01:34</td>
+      <td>2016-01-01 00:15:38</td>
+      <td>1</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>2016-01-01 00:01:36</td>
+      <td>2016-01-01 00:20:36</td>
+      <td>1</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>2016-01-01 00:01:37</td>
+      <td>2016-01-01 00:25:25</td>
+      <td>2</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+ </br>
+ 
+ and found some duplicated rows, see the following table example:
+ 
+ 
 
-**Taxi Dataset: Zeros & Duplicates**
-
-
-**Taxi Dataset: LOcations outside NYC**
-
+**Taxi Dataset (Locations outside NYC)**
+</br> 
+According [source](https://data.cityofnewyork.us/Transportation/NYC-Taxi-Zones/d3c5-ddgc) NYC is located between (40.496115395170364, -74.25559136315209) and (40.91553277700258, -73.7000090639354)
+</br> 
+![alt text](/extra/TAXI%20Wrong%20coord.png "Outliers")
 
 
 ## 4. PREPERATION
