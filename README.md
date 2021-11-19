@@ -330,15 +330,13 @@ Scince the provided entries/exits data are comulative values (i.e. each observat
 </table>
 
 ### MTA Dataset (Outliers): 
-</br>
-outliers 
-</br>
+
+outliers </br>
 ![alt text](/extra/MTA%20Outliers%20before.png "Outliers")
-</br>
-outliers removed
-</br>
+
+outliers removed </br>
 ![alt text](/extra/MTA%20Outliers%20after.png "Outliers Removed")
-</br>
+
 
 ### Taxi Dataset (Missing values & Duplicates):
 Moving to **Taxi dataset** some observations have missing  pickup and/or drop-off coordinates equal to zeros (missing), see the following table: </br>
@@ -451,7 +449,6 @@ Moving to **Taxi dataset** some observations have missing  pickup and/or drop-of
  
  
 ### Taxi Dataset (Locations outside NYC):
-</br>
 According to [source](https://data.cityofnewyork.us/Transportation/NYC-Taxi-Zones/d3c5-ddgc) NYC is located between (40.496115395170364, -74.25559136315209) and (40.91553277700258, -73.7000090639354), so we removed all observations that have pickup or drop-off coordinates located outside these boundaries.
 </br> 
 observations with pickup or dropoff coordinates located outside NYC boundaries
