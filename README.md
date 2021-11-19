@@ -1,17 +1,16 @@
-
 # Exploratory Data Analysis (EDA) Project
 
-This project seeks to answer the analysis questions by Discovering, Cleaning, Preparing, nad Visualizing the data from the three datasets MTA, Taxi, and Stations datasets discussed in details below. The project explaind in five main sections as following:
+This project seeks to answer the analysis questions by Discovering, Cleaning, Preparing, and Visualizing the data from the three datasets MTA, Taxi, and Stations datasets discussed in detail below. The project explained in five main sections as follows:
 
 ## 1. ANALYSIS QUESTIONS
-- What patterns people follows in the NYC subway?
+- What patterns do people follow in the NYC subway?
 - Relationship between the NYC subway and taxies?
 
 ## 2. DATA
-Three datasets were used in this analysis, for each dataset we selected only columns we are interested in, as following:
+Three datasets were used in this analysis, for each dataset we selected only columns we are interested in, as follows:
 
 ### 1. MTA Dataset [source](http://web.mta.info/developers/turnstile.html): 
-provides the basic data about NYC subway turnstyles, e.g. number of entries (cumulative), number of exits (cumulative)
+provides the basic data about NYC subway turnstiles, e.g. number of entries (cumulative), number of exits (cumulative)
   
   <table border="1" class="dataframe">
   <thead>
@@ -89,9 +88,8 @@ provides the basic data about NYC subway turnstyles, e.g. number of entries (cum
 
 
 ### 2. NYC Yellow Taxi dataset [source](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page): 
-which provide the info about each taxi trip in NYC e.g. pickup location, dropoff location, pickup datetime, datetime dropoff, dataset can be found 
+which provide the info about each taxi trip in NYC e.g. pickup location, dropoff location, pickup DateTime, DateTime dropoff
   
-
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -210,7 +208,7 @@ which provide stations' names and locations, we need this dataset inorder to kno
 ## 3. CLEANING
 ### MTA Dataset (Wrong Data):
 
-Scince the provided entries/exits data are comulative values (i.e. each observation represent the total number of entries/exits until observation time) we need to calculate daily entries/exits, for that we ordered the observations by datetime so that we can calculate the daily entries/exits by subtracting each observation with the previouse one, see the following code snippet `df_mta['Daily Entries'] = df_mta[['Entries']].diff()`. After calculating the daily entries and daily exits by subtracting, wrong values appeared in columns *daily_entries* and *daily_exits* science some rows are subtracted from the previouse rows that don't belong to the same turnstyle or/and same day as the first row, these rows with the wrong data were removed, see row with index 252 in the following table:
+Scince the provided entries/exits data are cumulative values (i.e. each observation represent the total number of entries/exits until observation time) we need to calculate daily entries/exits, for that we ordered the observations by DateTime so that we can calculate the daily entries/exits by subtracting each observation with the previous one, see the following code snippet `df_mta['Daily Entries'] = df_mta[['Entries']].diff()`. After calculating the daily entries and daily exits by subtracting, wrong values appeared in columns *daily_entries* and *daily_exits* science some rows are subtracted from the previous rows that don't belong to the same turnstile or/and same day as the first row, these rows with the wrong data were removed, see the row with index 252 in the following table:
 
 <table border="1" class="dataframe">
   <thead>
@@ -463,19 +461,19 @@ By plotting MTA subway entries `plotly.express.scatter(df_mta_with_locations_uni
 
 </br>
 
-Comparing daily subway exits with taxi pickups we can see the areas where there is a lot of poeple exiting subwway while there is much lesser or non taxi pickups, which indicate that either these poeple exiting to thier homes directly or there is a chance these areas need to be considered by taxies to cover, see the following gragh:
+Comparing daily subway exits with taxi pickups we can see the areas where there is a lot of people exiting the subway while there is much lesser or non-taxi pickups, which indicate that either these people exiting to their homes directly or there is a chance these areas need to be considered by taxies to cover, see the following graph:
 
 ![alt text](/extra/Subway%20Exits%20vs%20Taxi%20Pickups.png "Subway Stations")
 
 
 ## 5. CONCLUSION
 - MTA and STATIONS datasets joined to get stations locations.
-- SATAIONS dataset didn’t require any cleaning.
+- STATIONS dataset didn’t require any cleaning.
 - Plotting entries/exits shows that Manhattan is the busiest area.
-- Plotting entries/exits vs drop-off/pickups show possible spots that have crowded by poeple coming from subway but uncovered by taxi.
+- Plotting entries/exits vs drop-off/pickups show possible spots that have been crowded by people coming from the subway but uncovered by taxi.
 
 </br>
-This project (EDA Project) was done to fullfill SDAIA T5 bootcamp requirements.
+This project (EDA Project) was done to fulfill SDAIA T5 Bootcamp requirements.
 
 by [Abdulaziz](https://github.com/AbdulazizAlshehri)
 
