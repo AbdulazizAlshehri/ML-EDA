@@ -468,7 +468,7 @@ By plotting MTA subway entries `plotly.express.scatter(df_mta_with_locations_uni
 
 Comparing daily subway exits with taxi pickups we can see the areas where there is a lot of people exiting the subway while there is much lesser or non-taxi pickups, which indicate that either these people exiting to their homes directly or there is a chance these areas need to be considered by taxies to cover, see the following graph:
 
-![alt text](/extra/Subway%20Exits%20vs%20Taxi%20Pickups.png "Stations vs taxi pickups")
+<!-- ![alt text](/extra/Subway%20Exits%20vs%20Taxi%20Pickups.png "Stations vs taxi pickups") -->
 ![Stations vs taxi pickups Image](/extra/Subway%20Exits%20vs%20Taxi%20Pickups.png?raw=true "Stations vs taxi pickups")
 
 ## 5. CONCLUSION
