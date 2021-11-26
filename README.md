@@ -454,20 +454,22 @@ According to [source](https://data.cityofnewyork.us/Transportation/NYC-Taxi-Zone
 </br> 
 observations with pickup or dropoff coordinates located outside NYC boundaries
 </br>
-![alt text](/extra/TAXI%20Wrong%20coord.png "Wrong coordinates")
+<!-- ![alt text](/extra/TAXI%20Wrong%20coord.png "Wrong coordinates") -->
+![Wrong coordinates Image](/extra/TAXI%20Wrong%20coord.png?raw=true "Wrong coordinates")
 
 
 ## 4. VISUALIZATION (RESULTS)
 By plotting MTA subway entries `plotly.express.scatter(df_mta_with_locations_uni, x="Longitude", y="Latitude", size="DailyEntries")` we can see the most crowded stations since each circle represent a subway station and size of the circle represent the total number of entries/exits in that stations, see the following graph: </br>
 
-![alt text](/Output%20Screenshots/SUBWAY%20Entries%20with%20locations.png "Subway Stations")
+<!-- ![alt text](/Output%20Screenshots/SUBWAY%20Entries%20with%20locations.png "Subway Stations") -->
+![Subway Stations Image](/Output%20Screenshots/SUBWAY%20Entries%20with%20locations.png?raw=true "Subway Stations")
 
 </br>
 
 Comparing daily subway exits with taxi pickups we can see the areas where there is a lot of people exiting the subway while there is much lesser or non-taxi pickups, which indicate that either these people exiting to their homes directly or there is a chance these areas need to be considered by taxies to cover, see the following graph:
 
-![alt text](/extra/Subway%20Exits%20vs%20Taxi%20Pickups.png "Subway Stations")
-
+![alt text](/extra/Subway%20Exits%20vs%20Taxi%20Pickups.png "Stations vs taxi pickups")
+![Stations vs taxi pickups Image](/extra/Subway%20Exits%20vs%20Taxi%20Pickups.png?raw=true "Stations vs taxi pickups")
 
 ## 5. CONCLUSION
 - MTA and STATIONS datasets joined to get stations locations.
