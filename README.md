@@ -330,10 +330,13 @@ Scince the provided entries/exits data are cumulative values (i.e. each observat
 ### MTA Dataset (Outliers): 
 
 outliers </br>
-![alt text](/extra/MTA%20Outliers%20before.png "Outliers")
+<!-- ![Outliers]( "Outliers") -->
+![Outliers Image](/extra/MTA%20Outliers%20before.png?raw=true "Outliers")
 
 outliers removed </br>
-![alt text](/extra/MTA%20Outliers%20after.png "Outliers Removed")
+<!-- ![alt text](/extra/MTA%20Outliers%20after.png "Outliers Removed") -->
+![Outliers Removed Image](/extra/MTA%20Outliers%20after.png?raw=true "Outliers Removed")
+
 
 
 ### Taxi Dataset (Missing values & Duplicates):
