@@ -478,7 +478,7 @@ Comparing daily subway exits with taxi pickups we can see the areas where there 
 - Plotting entries/exits vs drop-off/pickups show possible spots that have been crowded by people coming from the subway but uncovered by taxi.
 
 </br>
-This project (EDA Project) was done to fulfill SDAIA T5 Bootcamp requirements.
+This project was done to fulfill SDAIA T5 Bootcamp requirements.
 
-by [Abdulaziz](https://github.com/AbdulazizAlshehri)
+*Contributors [Abdulaziz Alshehri](https://github.com/AbdulazizAlshehri)*
 
