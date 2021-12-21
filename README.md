@@ -1,6 +1,8 @@
 # Exploratory Data Analysis (EDA) Project
 
-This project seeks to answer the analysis questions by Discovering, Cleaning, Preparing, and Visualizing the data from the three datasets MTA, Taxi, and Stations datasets discussed in detail below. The project explained in five main sections as follows:
+# About
+Two of the most important transportation options in modern cities are Subway and Taxis, this project seeks to understand the relationship between the demand on Subway Stations and the demand on Taxis and what is the pattern people tend to follow in these two transportation options. Three datasets were used to achieve the required analysis. Interesting insights were achieved e.g. few subway stations have the most crowdedness in the city, there are some are where the big number of people exits subway stations, and few taxi pickups occur in the same area and time interval.
+
 
 ## 1. ANALYSIS QUESTIONS
 - What patterns do people follow in the NYC subway?
